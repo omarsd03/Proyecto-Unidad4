@@ -122,6 +122,32 @@ public class EventosBD implements ActionListener {
             }
             
         }
+        
+        if (e.getSource().equals(btnUpdate)) {
+            
+            System.out.println("Update Funciona");
+            
+            try {
+                new ConexionMySQL().ActualizaBD(conexion);
+            } catch (SQLException ex) {
+                Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Tu no puedes hacer esto :/");
+            }
+            
+        }
+        
+        if (e.getSource().equals(btnDelete)) {
+            
+            System.out.println("Esto Tambien funciona");
+            
+            try {
+                new ConexionMySQL().EliminaBD(conexion);
+            } catch (SQLException ex) {
+                Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Tu no puedes hacer esto :/");
+            }
+            
+        }
                 
         
     }

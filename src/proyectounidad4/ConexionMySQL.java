@@ -39,7 +39,6 @@ public class ConexionMySQL {
     
     public void SeleccionaBD(Connection conexion) throws SQLException {
         
-        System.out.println(conexion);
         modelo.setRowCount(0);
         
         String query = "SELECT * FROM empleados";
@@ -78,9 +77,36 @@ public class ConexionMySQL {
         PreparedStatement stmt = conexion.prepareStatement(query);
         stmt.executeUpdate();
         
-        System.out.println("Se ha insertado el producto");
+        System.out.println("Se ha insertado el empleado");
         
-        System.out.println(query);
+    }
+    
+    public void ActualizaBD(Connection conexion) throws SQLException {
+        
+        int id = Integer.parseInt(txtId.getText());
+        String nombre = txtNombre.getText();
+        String apellidos = txtApellidos.getText();
+        String cargo = txtCargo.getText();
+        
+        String query = "UPDATE empleados SET nombre='" + nombre + "', apellidos='" + apellidos + "', cargo='" + cargo + "' WHERE id=" + id;
+        PreparedStatement stmt = conexion.prepareStatement(query);
+        stmt.executeUpdate();
+        
+        System.out.println("Se ha actualizado el empleado");
+        
+    }
+    
+    public void EliminaBD(Connection conexion) throws SQLException {
+        
+        int id = Integer.parseInt(txtId.getText());
+        
+        String query = "DELETE FROM empleados WHERE id = " + id;
+        PreparedStatement stmt = conexion.prepareStatement(query);
+        stmt.executeUpdate();
+        // Statement stmt = conexion.createStatement();
+        //ResultSet rs = stmt.executeQuery(query);
+        
+        System.out.println("Se ha eliminado el empleado");
         
     }
     
