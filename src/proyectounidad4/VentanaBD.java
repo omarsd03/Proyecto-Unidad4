@@ -67,6 +67,7 @@ public class VentanaBD {
         f.setJMenuBar(contenedor);
         
         lblId = c.getLabel("ID");
+        lblId.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -78,6 +79,7 @@ public class VentanaBD {
         p.add(lblId);
         
         txtId = c.getField(10);
+        txtId.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -89,6 +91,7 @@ public class VentanaBD {
         p.add(txtId);
         
         lblNombre = c.getLabel("Nombre");
+        lblNombre.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -100,6 +103,7 @@ public class VentanaBD {
         p.add(lblNombre);
         
         txtNombre = c.getField(10);
+        txtNombre.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -111,6 +115,7 @@ public class VentanaBD {
         p.add(txtNombre);
         
         lblApellidos = c.getLabel("Apellidos");
+        lblApellidos.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -122,6 +127,7 @@ public class VentanaBD {
         p.add(lblApellidos);
         
         txtApellidos = c.getField(10);
+        txtApellidos.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -133,6 +139,7 @@ public class VentanaBD {
         p.add(txtApellidos);
         
         lblCargo = c.getLabel("Cargo");
+        lblCargo.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -144,6 +151,7 @@ public class VentanaBD {
         p.add(lblCargo);
         
         txtCargo = c.getField(10);
+        txtCargo.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -155,6 +163,8 @@ public class VentanaBD {
         p.add(txtCargo);
         
         btnSelect = c.getButton("Obtener empleados");
+        btnSelect.addActionListener(new EventosBD());
+        btnSelect.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -167,6 +177,8 @@ public class VentanaBD {
         p.add(btnSelect);
         
         btnInsert = c.getButton("Agregar empleado");
+        btnInsert.addActionListener(new EventosBD());
+        btnInsert.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -179,6 +191,8 @@ public class VentanaBD {
         p.add(btnInsert);
         
         btnUpdate = c.getButton("Actualizar empleado");
+        btnUpdate.addActionListener(new EventosBD());
+        btnUpdate.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
@@ -191,6 +205,8 @@ public class VentanaBD {
         p.add(btnUpdate);
         
         btnDelete = c.getButton("Eliminar empleado");
+        btnDelete.addActionListener(new EventosBD());
+        btnDelete.setVisible(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
