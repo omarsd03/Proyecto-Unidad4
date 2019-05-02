@@ -7,6 +7,10 @@ package proyectounidad4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static proyectounidad4.ConexionMySQL.conexion;
 import static proyectounidad4.VentanaBD.btnDelete;
 import static proyectounidad4.VentanaBD.btnInsert;
 import static proyectounidad4.VentanaBD.btnSelect;
@@ -19,6 +23,7 @@ import static proyectounidad4.VentanaBD.txtApellidos;
 import static proyectounidad4.VentanaBD.txtCargo;
 import static proyectounidad4.VentanaBD.txtId;
 import static proyectounidad4.VentanaBD.txtNombre;
+import static proyectounidad4.VentanaConexiones.cbUsuarios;
 
 /**
  *
@@ -91,6 +96,31 @@ public class EventosBD implements ActionListener {
             btnInsert.setVisible(false);
             btnUpdate.setVisible(false);
             btnDelete.setVisible(true);
+        }
+        
+        if (e.getSource().equals(btnSelect)) {
+            
+            System.out.println("Esto Funciona!!");
+            
+            try {
+                new ConexionMySQL().SeleccionaBD(conexion);
+            } catch (SQLException ex) {
+                Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        
+        if (e.getSource().equals(btnInsert)) {
+            
+            System.out.println("Esto Funciona alv");
+            
+            try {
+                new ConexionMySQL().InsertaBD(conexion);
+            } catch (SQLException ex) {
+                Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Tu no puedes hacer esto :/");
+            }
+            
         }
                 
         

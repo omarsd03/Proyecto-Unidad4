@@ -7,8 +7,12 @@ package proyectounidad4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static proyectounidad4.VentanaConexiones.btnConectar;
 import static proyectounidad4.VentanaConexiones.btnIngresar;
+import static proyectounidad4.VentanaConexiones.cbGestores;
 
 /**
  *
@@ -20,7 +24,16 @@ public class EventosConexiones implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         if (e.getSource().equals(btnConectar)) {
-            System.out.println("Conectar Works");
+            
+            if (cbGestores.getSelectedItem().equals("MySQL")) {
+                try {
+                    new ConexionMySQL().ConectaBD();
+                    btnIngresar.setEnabled(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
         }
         
         if (e.getSource().equals(btnIngresar)) {

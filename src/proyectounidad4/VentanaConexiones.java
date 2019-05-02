@@ -15,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -22,7 +23,8 @@ import javax.swing.JPanel;
  */
 public class VentanaConexiones {
     
-    static JLabel lblUsuarios, lblGestores;
+    static JLabel lblUsuarios, lblGestores, lblPassword;
+    static JTextField txtPassword;
     static JButton btnConectar, btnIngresar;
     static JCheckBox jcSelect, jcInsert, jcUpdate, jcDelete;
     static JComboBox cbUsuarios, cbGestores;
@@ -101,6 +103,28 @@ public class VentanaConexiones {
         
         p.add(cbGestores);
         
+        lblPassword = c.getLabel("Contraseña");
+        
+        restricciones.fill = GridBagConstraints.HORIZONTAL;
+        restricciones.weightx = 0.0;
+        restricciones.gridx = 0;
+        restricciones.gridy = 2;
+        restricciones.insets = new Insets(5, 5, 5, 5);
+        gridBagLayout.setConstraints(lblPassword, restricciones);
+        
+        p.add(lblPassword);
+        
+        txtPassword = c.getField(10);
+        
+        restricciones.fill = GridBagConstraints.HORIZONTAL;
+        restricciones.weightx = 0.0;
+        restricciones.gridx = 1;
+        restricciones.gridy = 2;
+        restricciones.insets = new Insets(5, 5, 5, 5);
+        gridBagLayout.setConstraints(txtPassword, restricciones);
+        
+        p.add(txtPassword);
+        
         btnConectar = c.getButton("Conectar");
         btnConectar.addActionListener(new EventosConexiones());
         
@@ -108,7 +132,7 @@ public class VentanaConexiones {
         restricciones.weightx = 0.0;
         restricciones.gridwidth = 2; // Ancho de columnas
         restricciones.gridx = 0;
-        restricciones.gridy = 2;
+        restricciones.gridy = 3;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(btnConectar, restricciones);
         
@@ -120,7 +144,7 @@ public class VentanaConexiones {
         restricciones.weightx = 0.0;
         // restricciones.gridwidth = 2; // Ancho de columnas
         restricciones.gridx = 0;
-        restricciones.gridy = 3;
+        restricciones.gridy = 4;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(jcSelect, restricciones);
         
@@ -132,7 +156,7 @@ public class VentanaConexiones {
         restricciones.weightx = 0.0;
         // restricciones.gridwidth = 2; // Ancho de columnas
         restricciones.gridx = 0;
-        restricciones.gridy = 4;
+        restricciones.gridy = 5;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(jcInsert, restricciones);
         
@@ -144,7 +168,7 @@ public class VentanaConexiones {
         restricciones.weightx = 0.0;
         // restricciones.gridwidth = 2; // Ancho de columnas
         restricciones.gridx = 0;
-        restricciones.gridy = 5;
+        restricciones.gridy = 6;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(jcUpdate, restricciones);
         
@@ -156,7 +180,7 @@ public class VentanaConexiones {
         restricciones.weightx = 0.0;
         // restricciones.gridwidth = 2; // Ancho de columnas
         restricciones.gridx = 0;
-        restricciones.gridy = 6;
+        restricciones.gridy = 7;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(jcDelete, restricciones);
         
@@ -164,13 +188,14 @@ public class VentanaConexiones {
         
         btnIngresar = c.getButton("Ingresar");
         btnIngresar.addActionListener(new EventosConexiones());
+        btnIngresar.setEnabled(false);
         
         restricciones.fill = GridBagConstraints.HORIZONTAL;
         restricciones.weightx = 0.0;
         restricciones.gridwidth = 2; // Ancho de columnas
         // restricciones.gridheight = 2;
         restricciones.gridx = 0;
-        restricciones.gridy = 7;
+        restricciones.gridy = 8;
         restricciones.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(btnIngresar, restricciones);
         

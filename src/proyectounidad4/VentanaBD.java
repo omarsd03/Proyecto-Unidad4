@@ -16,7 +16,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,6 +29,8 @@ public class VentanaBD {
     static JLabel lblId, lblNombre, lblApellidos, lblCargo;
     static JTextField txtId, txtNombre, txtApellidos, txtCargo;
     static JButton btnSelect, btnUpdate, btnInsert, btnDelete;
+    static JTable tablaEmpleados;
+    static DefaultTableModel modelo;
     
     VentanaBD() {
         
@@ -217,6 +221,26 @@ public class VentanaBD {
         gridBagLayout.setConstraints(btnDelete, restricciones);
         
         p.add(btnDelete);
+        
+        tablaEmpleados = new JTable();
+        
+        modelo = (DefaultTableModel) tablaEmpleados.getModel();
+        tablaEmpleados.setModel(modelo);
+        
+        modelo.addColumn("Id");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Apellidos");
+        modelo.addColumn("Cargo");
+        
+        restricciones.fill = GridBagConstraints.HORIZONTAL;
+        restricciones.weightx = 0.0;
+        restricciones.gridwidth = 2;
+        restricciones.gridx = 0;
+        restricciones.gridy = 8;
+        restricciones.insets = new Insets(5, 5, 5, 5);
+        gridBagLayout.setConstraints(tablaEmpleados, restricciones);
+        
+        p.add(tablaEmpleados);
         
         f.add(p);
         
