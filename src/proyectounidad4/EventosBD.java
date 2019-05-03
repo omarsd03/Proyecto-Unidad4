@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static proyectounidad4.ConexionMySQL.conexion;
+import static proyectounidad4.ConexionesBD.conexion;
 import static proyectounidad4.VentanaBD.btnDelete;
 import static proyectounidad4.VentanaBD.btnInsert;
 import static proyectounidad4.VentanaBD.btnSelect;
@@ -103,7 +103,7 @@ public class EventosBD implements ActionListener {
             System.out.println("Esto Funciona!!");
             
             try {
-                new ConexionMySQL().SeleccionaBD(conexion);
+                new Consultas().SeleccionaBD(conexion);
             } catch (SQLException ex) {
                 Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -115,7 +115,7 @@ public class EventosBD implements ActionListener {
             System.out.println("Esto Funciona alv");
             
             try {
-                new ConexionMySQL().InsertaBD(conexion);
+                new Consultas().InsertaBD(conexion);
             } catch (SQLException ex) {
                 Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Tu no puedes hacer esto :/");
@@ -128,7 +128,7 @@ public class EventosBD implements ActionListener {
             System.out.println("Update Funciona");
             
             try {
-                new ConexionMySQL().ActualizaBD(conexion);
+                new Consultas().ActualizaBD(conexion);
             } catch (SQLException ex) {
                 Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Tu no puedes hacer esto :/");
@@ -141,7 +141,7 @@ public class EventosBD implements ActionListener {
             System.out.println("Esto Tambien funciona");
             
             try {
-                new ConexionMySQL().EliminaBD(conexion);
+                new Consultas().EliminaBD(conexion);
             } catch (SQLException ex) {
                 Logger.getLogger(EventosBD.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Tu no puedes hacer esto :/");

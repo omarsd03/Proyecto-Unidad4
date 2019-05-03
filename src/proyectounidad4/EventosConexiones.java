@@ -27,7 +27,16 @@ public class EventosConexiones implements ActionListener {
             
             if (cbGestores.getSelectedItem().equals("MySQL")) {
                 try {
-                    new ConexionMySQL().ConectaBD();
+                    new ConexionesBD().ConectaMySQL();
+                    btnIngresar.setEnabled(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if (cbGestores.getSelectedItem().equals("PostgreSQL")) {
+                try {
+                    new ConexionesBD().ConectaPostgreSQL();
                     btnIngresar.setEnabled(true);
                 } catch (SQLException ex) {
                     Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);

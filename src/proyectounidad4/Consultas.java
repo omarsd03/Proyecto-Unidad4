@@ -18,24 +18,13 @@ import static proyectounidad4.VentanaBD.txtId;
 import static proyectounidad4.VentanaBD.txtNombre;
 import static proyectounidad4.VentanaConexiones.cbUsuarios;
 import static proyectounidad4.VentanaConexiones.txtPassword;
+import static proyectounidad4.VentanaBD.modelo;
 
 /**
  *
  * @author Omar
  */
-public class ConexionMySQL {
-    
-    static Connection conexion = null;
-    
-    public Connection ConectaBD() throws SQLException {
-        
-        String driver = "jdbc:mysql://localhost/bdejemplo";
-        //conexion = DriverManager.getConnection(driver, "root", "omar");
-        conexion = DriverManager.getConnection(driver, cbUsuarios.getSelectedItem().toString(), txtPassword.getText());
-        System.out.println("Conexion Establecida!! :D");
-        return conexion;
-        
-    }
+public class Consultas {
     
     public void SeleccionaBD(Connection conexion) throws SQLException {
         
