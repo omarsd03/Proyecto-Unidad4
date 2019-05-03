@@ -35,7 +35,7 @@ public class EventosBD implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         if (e.getActionCommand().equals("SELECT")) {
-            System.out.println("Select Funciona!!");
+            // System.out.println("Select Funciona!!");
             lblId.setVisible(false);
             txtId.setVisible(false);
             lblNombre.setVisible(false);
@@ -51,7 +51,7 @@ public class EventosBD implements ActionListener {
         }
         
         if (e.getActionCommand().equals("INSERT")) {
-            System.out.println("Insert Funciona!! :D");
+            // System.out.println("Insert Funciona!! :D");
             lblId.setVisible(true);
             txtId.setVisible(true);
             lblNombre.setVisible(true);
@@ -67,7 +67,7 @@ public class EventosBD implements ActionListener {
         }
         
         if (e.getActionCommand().equals("UPDATE")) {
-            System.out.println("Update Funciona!! :D");
+            // System.out.println("Update Funciona!! :D");
             lblId.setVisible(true);
             txtId.setVisible(true);
             lblNombre.setVisible(true);
@@ -83,7 +83,7 @@ public class EventosBD implements ActionListener {
         }
         
         if (e.getActionCommand().equals("DELETE")) {
-            System.out.println("Delete Funciona :D");
+            // System.out.println("Delete Funciona :D");
             lblId.setVisible(true);
             txtId.setVisible(true);
             lblNombre.setVisible(false);
@@ -100,8 +100,6 @@ public class EventosBD implements ActionListener {
         
         if (e.getSource().equals(btnSelect)) {
             
-            System.out.println("Esto Funciona!!");
-            
             try {
                 new Consultas().SeleccionaBD(conexion);
             } catch (SQLException ex) {
@@ -111,8 +109,6 @@ public class EventosBD implements ActionListener {
         }
         
         if (e.getSource().equals(btnInsert)) {
-            
-            System.out.println("Esto Funciona alv");
             
             try {
                 new Consultas().InsertaBD(conexion);
@@ -125,8 +121,6 @@ public class EventosBD implements ActionListener {
         
         if (e.getSource().equals(btnUpdate)) {
             
-            System.out.println("Update Funciona");
-            
             try {
                 new Consultas().ActualizaBD(conexion);
             } catch (SQLException ex) {
@@ -137,8 +131,6 @@ public class EventosBD implements ActionListener {
         }
         
         if (e.getSource().equals(btnDelete)) {
-            
-            System.out.println("Esto Tambien funciona");
             
             try {
                 new Consultas().EliminaBD(conexion);

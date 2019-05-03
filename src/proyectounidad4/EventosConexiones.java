@@ -66,7 +66,6 @@ public class EventosConexiones implements ActionListener {
         }
         
         if (e.getSource().equals(btnIngresar)) {
-            System.out.println("Ingresar Works");
             new VentanaBD();
         }
         

@@ -44,9 +44,10 @@ public class ConexionesBD {
         
         String cmd = null;
         int rc;
-        
+        System.out.println("Ok..");
         Class.forName("com.informix.jdbc.IfxDriver");
-        String driver = "jdbc:informix-sqli://localhost:9091:INFORMIXSERVER=Localhost";
+        String driver = "jdbc:informix-sqli://localhost:9092:INFORMIXSERVER=PruebaConexion";
+        System.out.println("Llego al driver");
         conexion = DriverManager.getConnection(driver, cbUsuarios.getSelectedItem().toString(), txtPassword.getText());
         // conexion = DriverManager.getConnection("jdbc:informix-sqli://localhost:9091:INFORMIXSERVER=Localhost;user=informix;password=zmur300");
         System.out.println("Conexion Establecida!! :D");
@@ -56,9 +57,9 @@ public class ConexionesBD {
             cmd = "database bdejemplo;";
             rc = stmt.executeUpdate(cmd);
             stmt.close();
-            System.out.println("Se testeo la correctamente la BD");
+            System.out.println("Se testeo correctamente la BD");
         } catch (SQLException e) {
-            System.out.println("ERROR: execution failed - statement:" + cmd);
+            System.out.println("ERROR: El Statement Fallo:" + cmd);
             System.out.println("ERROR: " + e.getMessage());
         }
         

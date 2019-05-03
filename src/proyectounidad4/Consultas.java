@@ -6,18 +6,14 @@
 package proyectounidad4;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import static proyectounidad4.VentanaBD.modelo;
 import static proyectounidad4.VentanaBD.txtApellidos;
 import static proyectounidad4.VentanaBD.txtCargo;
 import static proyectounidad4.VentanaBD.txtId;
 import static proyectounidad4.VentanaBD.txtNombre;
-import static proyectounidad4.VentanaConexiones.cbUsuarios;
-import static proyectounidad4.VentanaConexiones.txtPassword;
 import static proyectounidad4.VentanaBD.modelo;
 
 /**
@@ -46,10 +42,10 @@ public class Consultas {
 
             modelo.addRow(fila);
             
-            System.out.print(rs.getInt("id"));
-            System.out.print(rs.getString("nombre"));
-            System.out.print(rs.getString("apellidos"));
-            System.out.print(rs.getString("cargo"));
+            //System.out.print(rs.getInt("id"));
+            //System.out.print(rs.getString("nombre"));
+            //System.out.print(rs.getString("apellidos"));
+            //System.out.print(rs.getString("cargo"));
 
         }
         

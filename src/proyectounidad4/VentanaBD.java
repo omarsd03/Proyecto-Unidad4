@@ -34,7 +34,7 @@ public class VentanaBD {
     
     VentanaBD() {
         
-        JFrame f = new JFrame("CRUD BD");
+        JFrame f = new JFrame("CRUD de Bases de Datos");
         
         JPanel p = new JPanel();
         
