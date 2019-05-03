@@ -43,6 +43,26 @@ public class EventosConexiones implements ActionListener {
                 }
             }
             
+            if (cbGestores.getSelectedItem().equals("Informix")) {
+                try {
+                    new ConexionesBD().ConectaInformix();
+                    btnIngresar.setEnabled(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if (cbGestores.getSelectedItem().equals("Oracle")) {
+                try {
+                    new ConexionesBD().ConectaOracle();
+                    btnIngresar.setEnabled(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(EventosConexiones.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
         }
         
         if (e.getSource().equals(btnIngresar)) {
